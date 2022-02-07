@@ -4,7 +4,6 @@ const app = express();
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const studentRoute = require('./api/routes/student')
-const facultyRoute = require('./api/routes/faculty')
 
 mongoose.connect('mongodb+srv://kuljeet:Stkh%401895@cluster0.wgq90.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
 
@@ -23,7 +22,7 @@ app.use(bodyParser.json());
 
 app.use('/student', studentRoute);
 
-app.use('/faculty', facultyRoute);
+
 
 app.use((req, res, next) =>{
     res.status(404).json({
@@ -31,7 +30,5 @@ app.use((req, res, next) =>{
     })
 })
 
-/* 
-app.use('/faculty', facultyRoute); */
 
 module.exports = app;    
