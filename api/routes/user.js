@@ -22,16 +22,16 @@ router.post('/', (req, res, next) => {
                 email: req.body.email
             })
             user.save()
-            .then(result =>{
-                res.status(200).json({
-                    new_user: result
+                .then(result => {
+                    res.status(200).json({
+                        new_user: result
+                    })
                 })
-            })
-            .catch(err =>{
-                res.status(500).json({
-                    error: err
+                .catch(err => {
+                    res.status(500).json({
+                        error: err
+                    })
                 })
-            })
         }
     })
 })
