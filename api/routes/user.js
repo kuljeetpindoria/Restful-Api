@@ -17,7 +17,7 @@ router.post('/register', (req, res, next) => {
         else {
 
             const user = new User({
-                _id: new mongoose.Types.ObjectId,
+                id: new mongoose.Types.ObjectId,
                 username: req.body.username,
                 password: hash,
                 phone: req.body.phone,
@@ -59,7 +59,7 @@ router.post('/login', (req, res, next) => {
                         email: user[0].email,
                         phone: user[0].phone
                     },
-                        
+                        'this is dummy',
                         {
                             expiresIn: "24h"
                         }
