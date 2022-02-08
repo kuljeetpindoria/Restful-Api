@@ -3,7 +3,7 @@ const router = express.Router();
 const Student = require('../model/studentModel')
 const mongoose = require('mongoose');
 const { json, text } = require('body-parser');
-const Joi = require('joi')
+
 
 // get request 
 router.get('/', (req, res, next) => {
@@ -42,7 +42,7 @@ router.post('/', (req, res, next) => {
         _id: new mongoose.Types.ObjectId,
         name: req.body.name,
         email: req.body.email,
-        phone: Joi.req.body.phone.min(10),
+        phone: req.body.phone,
         gender: req.body.gender
     })
     student.save()
